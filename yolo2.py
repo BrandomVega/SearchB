@@ -28,10 +28,4 @@ for nombre_archivo in nombres_archivos:
         path = directoryPath + "\\" +nombre_archivo
         results = model(path)  # results list
         for r in results:
-            im_array = r.plot()  # plot a BGR numpy array of predictions
-            im = Image.fromarray(im_array[..., ::-1])  # RGB PIL image
-            im.show()  # show image
-
-        
-
-print(f"    > Resultados: \n   path: {bestCoincidence['path']}")
+            r.save_txt(txt_file=r"C:\Users\Brandom\Documents\1Proyecto\yoloResults")
