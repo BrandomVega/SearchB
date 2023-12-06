@@ -27,24 +27,23 @@ def encontrar_texto_entre_comillas(cadena):
 
 def imageToText(textoBusqueda, path):
     inicio = time.time()
-    #print(f"Buscando para: {path}")
+    print(f"Buscando para: {path}")
     imagen = Image.open(path)
     texto = pytesseract.image_to_string(imagen).lower()
     textoWords = texto.split()
 
     
-
+    
     cuenta = 0
     for palabra in textoBusqueda:
         for texto in textoWords:
             if automatonCoincidenceWords(palabra, texto):
                 cuenta+=1
 
-    #end = time.time()
-    #print(f"    Tiempo {round(end-inicio, 4)} segundos ")
+    end = time.time()
+    print(f"    Tiempo {round(end-inicio, 4)} segundos ")
 
-    #print(f"    Coincidencia: {cuenta}")
-
+    print(f"    Coincidencia: {cuenta}")
     return cuenta
 
 
@@ -73,7 +72,6 @@ for nombre_archivo in nombres_archivos:
             bestCoincidence['cuenta'] = cuenta
 
 print(f"    > Resultados: \n   path: {bestCoincidence['path']}")
-
 
 
 
