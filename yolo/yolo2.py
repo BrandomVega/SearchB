@@ -35,7 +35,7 @@ for nombre_archivo in nombres_archivos:
 #Show data found
 
 for i, imageData in enumerate(resultData):
-    print(f"Imagen {i}: Clases encontradas")
+    print(f"Imagen {imageData[i]['path']}: Clases encontradas")
     last = ""
     for object in imageData:
         if last != object['name']:
@@ -46,3 +46,4 @@ for i, imageData in enumerate(resultData):
         #print("     >Confianza:", object['confidence'])
         #print("     >Coordenadas de la caja delimitadora:", object['box'])
     print("\n\n")
+
