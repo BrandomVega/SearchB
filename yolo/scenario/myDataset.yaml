@@ -1,0 +1,9 @@
+path: C:\Users\Brandom\Documents\yolotraining\data
+train: images/train
+val: images/validation
+
+
+names:
+    0: whiteboard
+    1: alpaca
+    
